@@ -355,7 +355,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b956df0e5addeb41902e0352fc6c8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Events: 000000
+  Events: 00
   door: {fileID: 859789877}
   finish: 0
 --- !u!4 &1355086574
