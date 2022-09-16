@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolShooting : MonoBehaviour, IUsable 
+public class PistolShooting : MonoBehaviour, IUsable
 {
     [SerializeField] private int damage;
 
