@@ -6,18 +6,20 @@ using UnityEngine.Events;
 public class PlayerRaycaster : MonoBehaviour
 {
     [Header("Ray Attributes")]
-    public float rayRange;
+    [SerializeField] private float rayRange;
     public Transform startTransform;
 
     [Header("Events")]
     [SerializeField]
     public UnityEvent<GameObject> rayEvents;
+
     void LateUpdate()
     {
 
         _raycastFromCamera();
 
     }
+
     private void _raycastFromCamera()
     {
 
@@ -34,7 +36,7 @@ public class PlayerRaycaster : MonoBehaviour
     {
 
         RaycastHit hit;
-        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == "Pickupable") 
+        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == "Pickupable")
         {
             return hit.transform.gameObject;
         }

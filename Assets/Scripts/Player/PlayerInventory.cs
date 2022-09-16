@@ -8,29 +8,41 @@ public class PlayerInventory : MonoBehaviour
     public List<GameObject> inventory;
     public PlayerRaycaster raycaster;
 
-    public void Pickup(){
+    public void Pickup()
+    {
 
         GameObject tempObject = raycaster.RaycastFromCamera();
-        
-        if(tempObject != null){
+
+        if (tempObject != null)
+        {
 
             objectInHand = tempObject;
             inventory.Add(objectInHand);
 
             _takeObjectToHand();
             _deactiveInventory();
-        
+
         }
 
     }
 
-    public void PlaceObject(){
+    public void PlaceObject()
+    {
 
         //#TODO bomba gibi seyleri yerlestirme kismi / Corpyr
-
+        if (gameObject.tag == "BombArea")
+        {
+            var bombControl = objectInHand.GetComponent<Bomb>();
+            if (bombControl != null)
+            {
+                
+            }
+        }
+        
     }
 
-    private void _takeObjectToHand(){ //#TODO pozisyon ve parent ele gore degisecek / Corpyr
+    private void _takeObjectToHand()
+    { //#TODO pozisyon ve parent ele gore degisecek / Corpyr
 
         objectInHand.tag = "Untagged";
         objectInHand.transform.parent = transform;
@@ -38,14 +50,17 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
-    private void _deactiveInventory(){
+    private void _deactiveInventory()
+    {
 
-        foreach(GameObject gameObject in inventory){
+        foreach (GameObject gameObject in inventory)
+        {
 
-            if(gameObject.name != objectInHand.name){
+            if (gameObject.name != objectInHand.name)
+            {
 
                 gameObject.SetActive(false);
-            
+
             }
 
         }

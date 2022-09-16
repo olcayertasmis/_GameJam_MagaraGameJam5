@@ -5,16 +5,19 @@ using UnityEngine.UI;
 
 public class PlayerUIChanger : MonoBehaviour
 {
-    public GameObject canvas;
-    public void ShowPickupInfo(){
+    [SerializeField] private GameObject canvas;
+
+    public void ShowPickupInfo()
+    {
 
         canvas.SetActive(true);
 
     }
 
-    private void Update() {
+    private void Update()
+    {
 
         canvas.SetActive(false);
-    
+
     }
 }
