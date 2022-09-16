@@ -9,14 +9,11 @@ public class PlayerInventory : MonoBehaviour
     public GameObject objectInHand;
     public List<GameObject> inventory;
     [Space(10f)]
+    public Transform itemGrabTransform; //Gecici el / Corpyr
     public PlayerRaycaster raycaster;
 
     private float timer = 5f;
 
-    private void Update()
-    {
-
-    }
     public void UseObjectInHand(){
 
         if(objectInHand != null){
@@ -30,7 +27,7 @@ public class PlayerInventory : MonoBehaviour
     public void Pickup()
     {
 
-        GameObject tempObject = raycaster.RaycastFromCamera();
+        GameObject tempObject = raycaster.RaycastFromCamera("Pickupable");
 
         if (tempObject != null)
         {
@@ -47,7 +44,7 @@ public class PlayerInventory : MonoBehaviour
 
     public bool PlaceObjectControl()
     {
-        GameObject bombRaycaster = raycaster.RaycastFromCamera();
+        GameObject bombRaycaster = raycaster.RaycastFromCamera("BombArea");
 
         if (bombRaycaster != null && bombRaycaster.gameObject.tag == "BombArea")
         {
@@ -66,7 +63,7 @@ public class PlayerInventory : MonoBehaviour
 
     public void PlaceObject()
     {
-        GameObject placeRaycaster = raycaster.RaycastFromCamera();
+        GameObject placeRaycaster = raycaster.RaycastFromCamera("BombArea");
         GameObject bombObject = objectInHand;
         bombObject.transform.position = placeRaycaster.gameObject.transform.position;
         Destroy(objectInHand);
@@ -74,11 +71,11 @@ public class PlayerInventory : MonoBehaviour
 
 
     private void _takeObjectToHand()
-    { //#TODO pozisyon ve parent ele gore degisecek / Corpyr
+    { 
 
         objectInHand.tag = "Untagged";
-        objectInHand.transform.parent = transform;
-        objectInHand.transform.position = transform.position;
+        objectInHand.transform.parent = itemGrabTransform.transform; 
+        objectInHand.transform.position = itemGrabTransform.transform.position;
 
     }
 

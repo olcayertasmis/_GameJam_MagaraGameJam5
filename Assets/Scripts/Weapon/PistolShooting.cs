@@ -14,7 +14,7 @@ public class PistolShooting : MonoBehaviour, IUsable //#TODO silah alimiyla akti
 
     private void Shoot()
     {
-        GameObject targetRaycaster = GetComponentInParent<PlayerRaycaster>().RaycastFromCamera();
+        GameObject targetRaycaster = GetComponentInParent<PlayerRaycaster>().RaycastFromCamera("Target");
         
         if (targetRaycaster != null && targetRaycaster.GetComponent<Target>() != null)
         {
