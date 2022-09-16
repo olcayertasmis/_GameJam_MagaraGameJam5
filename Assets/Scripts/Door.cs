@@ -52,7 +52,6 @@ public class Door : MonoBehaviour
             anim2.Play("CloseDoor2", 0, 0.0f);
             source.PlayOneShot(audioClose);
         }
-        print("press");
     }
 
 }
