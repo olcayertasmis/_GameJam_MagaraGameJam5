@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PistolShooting : MonoBehaviour
+public class PistolShooting : MonoBehaviour, IUsable //#TODO silah alimiyla aktiflestir / Corpyr
 {
     //public PlayerInputReciver playerInputReciver;
     [SerializeField] private int damage;
@@ -14,6 +14,12 @@ public class PistolShooting : MonoBehaviour
         {
             Shoot();
         }
+    }
+
+    public void Use(){
+
+        
+
     }
 
     private void Shoot()
