@@ -5,11 +5,8 @@ using UnityEngine.Events;
 
 public class PlayerInputReciver : MonoBehaviour
 {
-    [SerializeField]
-    public UnityEvent inputEvent;
-
+    [SerializeField] public UnityEvent inputEvent;
     private float timer = 5f;
-
     [SerializeField] private PlayerInventory playerInventory;
 
     void Update()
@@ -21,10 +18,11 @@ public class PlayerInputReciver : MonoBehaviour
 
         }
         
-        if (Input.GetKeyDown(KeyCode.F) && playerInventory.PlaceObjectControl())
+        if (Input.GetKey(KeyCode.F) && playerInventory.PlaceObjectControl())
         {
+            Debug.Log(timer);
             timer -= Time.deltaTime;
-            if (timer == 0)
+            if (timer <= 0)
             {
                 playerInventory.PlaceObject();
             }
