@@ -18,15 +18,15 @@ public class Controller : MonoBehaviour
     Vector3 moveDirection = Vector3.zero;
     float rotationX = 0;
 
-    [HideInInspector]
     public bool canMove = true;
 
     void Start()
     {
         characterController = GetComponent<CharacterController>();
 
-        Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+
     }
 
     void Update()
@@ -35,7 +35,15 @@ public class Controller : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             canMove = !canMove;
-            Cursor.visible = canMove;
+            Cursor.visible = !canMove;
+            if (canMove)
+            {
+                Cursor.lockState = CursorLockMode.Locked;
+            }
+            else
+            {
+                Cursor.lockState = CursorLockMode.None;
+            }
         }
 
         Vector3 forward = transform.TransformDirection(Vector3.forward);
