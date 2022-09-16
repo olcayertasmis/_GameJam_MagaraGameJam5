@@ -30,7 +30,7 @@ public class PlayerInventory : MonoBehaviour
     public void Pickup()
     {
 
-        GameObject tempObject = raycaster.RaycastFromCamera();
+        GameObject tempObject = raycaster.RaycastFromCamera("Pickupable");
 
         if (tempObject != null)
         {
@@ -47,7 +47,7 @@ public class PlayerInventory : MonoBehaviour
 
     public bool PlaceObjectControl()
     {
-        GameObject bombRaycaster = raycaster.RaycastFromCamera();
+        GameObject bombRaycaster = raycaster.RaycastFromCamera("BombArea");
 
         if (bombRaycaster != null && bombRaycaster.gameObject.tag == "BombArea")
         {
@@ -66,8 +66,8 @@ public class PlayerInventory : MonoBehaviour
 
     public void PlaceObject()
     {
-        GameObject placeRaycaster = raycaster.RaycastFromCamera();
-        
+        GameObject placeRaycaster = raycaster.RaycastFromCamera("BombArea");
+
         objectInHand.transform.position = placeRaycaster.gameObject.transform.position;
         objectInHand.transform.SetParent(null);
         inventory.Remove(objectInHand);
