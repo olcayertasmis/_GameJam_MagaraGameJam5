@@ -32,21 +32,11 @@ public class PlayerRaycaster : MonoBehaviour
 
     }
 
-    public GameObject RaycastFromCamera()
+    public GameObject RaycastFromCamera(string objectTag)
     {
 
         RaycastHit hit;
-        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == "Pickupable")
-        {
-            return hit.transform.gameObject;
-        }
-
-        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == "Target")
-        {
-            return hit.transform.gameObject;
-        }
-
-        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == "BombArea")
+        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == objectTag)
         {
             return hit.transform.gameObject;
         }
