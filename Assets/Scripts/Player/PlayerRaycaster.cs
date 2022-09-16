@@ -46,6 +46,11 @@ public class PlayerRaycaster : MonoBehaviour
             return hit.transform.gameObject;
         }
 
+        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == "BombArea")
+        {
+            return hit.transform.gameObject;
+        }
+
         return null;
     }
 }

@@ -8,6 +8,13 @@ public class PlayerInventory : MonoBehaviour
     public List<GameObject> inventory;
     public PlayerRaycaster raycaster;
 
+    private float timer = 5f;
+
+    private void Update()
+    {
+
+    }
+
     public void Pickup()
     {
 
@@ -26,20 +33,33 @@ public class PlayerInventory : MonoBehaviour
 
     }
 
-    public void PlaceObject()
+    public bool PlaceObjectControl()
     {
+        GameObject bombRaycaster = raycaster.RaycastFromCamera();
 
-        //#TODO bomba gibi seyleri yerlestirme kismi / Corpyr
-        if (gameObject.tag == "BombArea")
+        if (bombRaycaster != null && bombRaycaster.gameObject.tag == "BombArea")
         {
             var bombControl = objectInHand.GetComponent<Bomb>();
             if (bombControl != null)
             {
-                
+                return true;
+            }
+            else
+            {
+                return false;
             }
         }
-        
+        return false;
     }
+
+    public void PlaceObject()
+    {
+        GameObject placeRaycaster = raycaster.RaycastFromCamera();
+        GameObject bombObject = objectInHand;
+        bombObject.transform.position = placeRaycaster.gameObject.transform.position;
+        Destroy(objectInHand);
+    }
+
 
     private void _takeObjectToHand()
     { //#TODO pozisyon ve parent ele gore degisecek / Corpyr

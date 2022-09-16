@@ -8,13 +8,30 @@ public class PlayerInputReciver : MonoBehaviour
     [SerializeField]
     public UnityEvent inputEvent;
 
-    // Update is called once per frame
+    private float timer = 5f;
+
+    [SerializeField] private PlayerInventory playerInventory;
+
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.E)){
+        if (Input.GetKeyDown(KeyCode.E))
+        {
 
             inputEvent.Invoke();
 
+        }
+        
+        if (Input.GetKeyDown(KeyCode.F) && playerInventory.PlaceObjectControl())
+        {
+            timer -= Time.deltaTime;
+            if (timer == 0)
+            {
+                playerInventory.PlaceObject();
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.F))
+        {
+            timer = 5f;
         }
     }
 }
