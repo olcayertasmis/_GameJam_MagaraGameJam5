@@ -11,18 +11,18 @@ public class PlayerInventory : MonoBehaviour
     [Space(10f)]
     public PlayerRaycaster raycaster;
 
-    private float timer = 5f;
-
     private void Update()
     {
 
     }
-    public void UseObjectInHand(){
+    public void UseObjectInHand()
+    {
 
-        if(objectInHand != null){
-            
+        if (objectInHand != null)
+        {
+
             objectInHand.GetComponent<IUsable>().Use();
-        
+
         }
 
     }
@@ -51,7 +51,7 @@ public class PlayerInventory : MonoBehaviour
 
         if (bombRaycaster != null && bombRaycaster.gameObject.tag == "BombArea")
         {
-            var bombControl = objectInHand.GetComponent<Bomb>(); //#FIXME null hatasi veriyor / Corpyr
+            var bombControl = objectInHand.GetComponentInChildren<Bomb>();
             if (bombControl != null)
             {
                 return true;
@@ -67,9 +67,10 @@ public class PlayerInventory : MonoBehaviour
     public void PlaceObject()
     {
         GameObject placeRaycaster = raycaster.RaycastFromCamera();
-        GameObject bombObject = objectInHand;
-        bombObject.transform.position = placeRaycaster.gameObject.transform.position;
-        Destroy(objectInHand);
+        
+        objectInHand.transform.position = placeRaycaster.gameObject.transform.position;
+        objectInHand.transform.SetParent(null);
+        inventory.Remove(objectInHand);
     }
 
 

@@ -22,7 +22,7 @@ public class PlayerInputReciver : MonoBehaviour
             inputEvent.Invoke();
 
         }
-        
+
         if (Input.GetKey(KeyCode.F) && playerInventory.PlaceObjectControl())
         {
             Debug.Log(timer);
@@ -30,6 +30,7 @@ public class PlayerInputReciver : MonoBehaviour
             if (timer <= 0)
             {
                 playerInventory.PlaceObject();
+                //return;
             }
         }
         else if (Input.GetKeyUp(KeyCode.F))
