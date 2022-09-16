@@ -4,15 +4,26 @@ using UnityEngine;
 
 public class PistolShooting : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int damage;
+
+    [SerializeField] private PlayerRaycaster playerRaycaster;
+    [SerializeField] private Target target;
+
+    private void Update()
     {
-        
+        if (Input.GetMouseButtonDown(0))
+        {
+            Shoot();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Shoot()
     {
+        GameObject targetRaycaster = playerRaycaster.RaycastFromCamera();
         
+        if (targetRaycaster != null)
+        {
+            target.TakeDamage(damage);
+        }
     }
 }
