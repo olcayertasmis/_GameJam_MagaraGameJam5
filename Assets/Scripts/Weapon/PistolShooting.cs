@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PistolShooting : MonoBehaviour
 {
+    //public PlayerInputReciver playerInputReciver;
     [SerializeField] private int damage;
-
     [SerializeField] private PlayerRaycaster playerRaycaster;
-    [SerializeField] private Target target;
 
     private void Update()
     {
@@ -21,9 +20,9 @@ public class PistolShooting : MonoBehaviour
     {
         GameObject targetRaycaster = playerRaycaster.RaycastFromCamera();
         
-        if (targetRaycaster != null)
+        if (targetRaycaster != null && targetRaycaster.GetComponent<Target>() != null)
         {
-            target.TakeDamage(damage);
+            targetRaycaster.GetComponent<Target>().TakeDamage(damage);
         }
     }
 }
