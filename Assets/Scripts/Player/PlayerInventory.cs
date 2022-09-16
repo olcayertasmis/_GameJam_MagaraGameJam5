@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class PlayerInventory : MonoBehaviour
 {
+    [Header("Runtime Variables")]
+    [Space(5f)]
     public GameObject objectInHand;
     public List<GameObject> inventory;
+    [Space(10f)]
     public PlayerRaycaster raycaster;
 
     private float timer = 5f;
@@ -39,7 +42,7 @@ public class PlayerInventory : MonoBehaviour
 
         if (bombRaycaster != null && bombRaycaster.gameObject.tag == "BombArea")
         {
-            var bombControl = objectInHand.GetComponent<Bomb>();
+            var bombControl = objectInHand.GetComponent<Bomb>(); //#FIXME null hatasi veriyor / Corpyr
             if (bombControl != null)
             {
                 return true;

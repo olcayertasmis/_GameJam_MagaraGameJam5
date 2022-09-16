@@ -25,7 +25,7 @@ public class PlayerRaycaster : MonoBehaviour
 
         RaycastHit hit;
         Debug.DrawRay(startTransform.position, startTransform.TransformDirection(Vector3.forward) * rayRange, Color.yellow);
-        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange))
+        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == "Pickupable")
         {
             rayEvents?.Invoke(hit.transform.gameObject);
         }
