@@ -11,6 +11,11 @@ public class PlayerInputReciver : MonoBehaviour
 
     void Update()
     {
+        if (Input.GetMouseButtonDown(0))
+        {
+            playerInventory.UseObjectInHand();
+        }
+
         if (Input.GetKeyDown(KeyCode.E))
         {
 

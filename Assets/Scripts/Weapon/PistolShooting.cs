@@ -4,27 +4,17 @@ using UnityEngine;
 
 public class PistolShooting : MonoBehaviour, IUsable //#TODO silah alimiyla aktiflestir / Corpyr
 {
-    //public PlayerInputReciver playerInputReciver;
     [SerializeField] private int damage;
-    [SerializeField] private PlayerRaycaster playerRaycaster;
-
-    private void Update()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            Shoot();
-        }
-    }
 
     public void Use(){
 
-        
+        Shoot();
 
     }
 
     private void Shoot()
     {
-        GameObject targetRaycaster = playerRaycaster.RaycastFromCamera();
+        GameObject targetRaycaster = GetComponentInParent<PlayerRaycaster>().RaycastFromCamera();
         
         if (targetRaycaster != null && targetRaycaster.GetComponent<Target>() != null)
         {

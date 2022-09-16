@@ -17,6 +17,15 @@ public class PlayerInventory : MonoBehaviour
     {
 
     }
+    public void UseObjectInHand(){
+
+        if(objectInHand != null){
+            
+            objectInHand.GetComponent<IUsable>().Use();
+        
+        }
+
+    }
 
     public void Pickup()
     {

@@ -196,7 +196,6 @@ GameObject:
   - component: {fileID: 4765556637670822789}
   - component: {fileID: 6635744492301484367}
   - component: {fileID: 1464618758424196596}
-  - component: {fileID: 35545673893617625}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -344,20 +343,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canvas: {fileID: 7799151966923581903}
---- !u!114 &35545673893617625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8631817182575437951}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9d190e5477587b048b1bda2e4c0e4706, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 0
-  playerRaycaster: {fileID: 6635744492301484367}
 --- !u!1 &8631817184570437249
 GameObject:
   m_ObjectHideFlags: 0
