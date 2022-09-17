@@ -17,13 +17,13 @@ public class Button : MonoBehaviour
         }
     }
 
-    public void Bomb()
+    public void PushButton()
     {
-        GameObject tempObject = raycaster.RaycastFromCamera("BombButton");
+        GameObject tempObject = raycaster.RaycastFromCamera("Button");
 
-        if (tempObject != null && tempObject.tag == "BombButton")
+        if (tempObject != null && tempObject.tag == "Button")
         {
-            print("Bombayım");
+            print("Butonum"); // Buraya istenen fonksiyonları çağırma yazılacak
         }
     }
 }
