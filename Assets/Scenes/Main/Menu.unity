@@ -1428,7 +1428,7 @@ MonoBehaviour:
   masterSlider: {fileID: 56985782}
   musicSlider: {fileID: 744308761}
   mixer: {fileID: 24100000, guid: 428e41d84f3995745bd8bba51bcec1de, type: 2}
-  startClip: {fileID: 8300000, guid: d0a85c71cec0d7049ab22d1b8c52f843, type: 3}
+  startClip: {fileID: 8300000, guid: f28fd24b5ce543c458513b97d9de70b3, type: 3}
   butStart: {fileID: 1425261590}
 --- !u!114 &1090911152
 MonoBehaviour:

@@ -42,13 +42,14 @@ public class Menu : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             PlayerPrefs.DeleteAll();
         }
         if (!source.isPlaying && playbut)
         {
             sound.SetActive(true);
+            playbut = false;
         }
     }
 
