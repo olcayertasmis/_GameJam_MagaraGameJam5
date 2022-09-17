@@ -7,8 +7,12 @@ TagManager:
   - Pickupable
   - Target
   - BombArea
+<<<<<<< Updated upstream
   - BombButton
   - Falling Object
+=======
+  - Button
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

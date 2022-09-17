@@ -433,7 +433,7 @@ GameObject:
   - component: {fileID: 1006722833}
   m_Layer: 0
   m_Name: Button
-  m_TagString: BombButton
+  m_TagString: Button
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -455,7 +455,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1006722833}
         m_TargetAssemblyTypeName: Button, Assembly-CSharp
-        m_MethodName: Bomb
+        m_MethodName: PushButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -765,7 +765,7 @@ PrefabInstance:
       objectReference: {fileID: 1006722833}
     - target: {fileID: 7070083105638739887, guid: 2a10fa776dbc4e746a398b0509ccc763, type: 3}
       propertyPath: inputEvent.m_PersistentCalls.m_Calls.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7070083105638739887, guid: 2a10fa776dbc4e746a398b0509ccc763, type: 3}
       propertyPath: inputEvent.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
