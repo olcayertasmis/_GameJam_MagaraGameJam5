@@ -9,6 +9,7 @@ public class PlayerInventory : MonoBehaviour
     public GameObject objectInHand;
     public List<GameObject> inventory;
     [Space(10f)]
+    public Transform itemGrabTransform; //Gecici el / Corpyr
     public PlayerRaycaster raycaster;
 
     private void Update()
@@ -75,14 +76,15 @@ public class PlayerInventory : MonoBehaviour
     }
 
 
-    private void _takeObjectToHand()
-    { //#TODO pozisyon ve parent ele gore degisecek / Corpyr
+     private void _takeObjectToHand()
+    { 
 
         objectInHand.tag = "Untagged";
-        objectInHand.transform.parent = transform;
-        objectInHand.transform.position = transform.position;
+        objectInHand.transform.parent = itemGrabTransform.transform; 
+        objectInHand.transform.position = itemGrabTransform.transform.position;
 
     }
+
 
     private void _deactiveInventory()
     {
