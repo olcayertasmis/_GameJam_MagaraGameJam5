@@ -8,8 +8,6 @@ public class PlayerInputReciver : MonoBehaviour
     [SerializeField] public UnityEvent inputEvent;
     private float timer = 5f;
     [SerializeField] private PlayerInventory playerInventory;
-    [SerializeField] private Button button;
-
 
     void Update()
     {
