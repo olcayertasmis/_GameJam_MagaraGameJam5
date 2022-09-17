@@ -33,7 +33,7 @@ public class PlayerInventory : MonoBehaviour
 
         GameObject tempObject = raycaster.RaycastFromCamera("Pickupable");
 
-        if (tempObject != null)
+        if (tempObject != null && tempObject.gameObject.tag == "Pickupable")
         {
 
             objectInHand = tempObject;
@@ -69,10 +69,13 @@ public class PlayerInventory : MonoBehaviour
     {
         GameObject placeRaycaster = raycaster.RaycastFromCamera("BombArea");
 
-        objectInHand.transform.position = placeRaycaster.gameObject.transform.position;
-        objectInHand.transform.SetParent(null);
-        inventory.Remove(objectInHand);
-        objectInHand = null;
+        if (placeRaycaster != null)
+        {
+            objectInHand.transform.position = placeRaycaster.gameObject.transform.position;
+            objectInHand.transform.SetParent(null);
+            inventory.Remove(objectInHand);
+            objectInHand = null;
+        }
     }
 
 

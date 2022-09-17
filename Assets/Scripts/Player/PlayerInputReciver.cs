@@ -8,6 +8,8 @@ public class PlayerInputReciver : MonoBehaviour
     [SerializeField] public UnityEvent inputEvent;
     private float timer = 5f;
     [SerializeField] private PlayerInventory playerInventory;
+    [SerializeField] private Button button;
+
 
     void Update()
     {
@@ -16,11 +18,10 @@ public class PlayerInputReciver : MonoBehaviour
             playerInventory.UseObjectInHand();
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && inputEvent != null)
         {
 
             inputEvent.Invoke();
-
         }
 
         if (Input.GetKey(KeyCode.F) && playerInventory.PlaceObjectControl())
@@ -29,7 +30,8 @@ public class PlayerInputReciver : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                playerInventory.PlaceObject();
+                inputEvent.Invoke();
+                //playerInventory.PlaceObject();
                 //return;
             }
         }
