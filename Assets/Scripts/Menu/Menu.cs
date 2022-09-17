@@ -12,15 +12,21 @@ public class Menu : MonoBehaviour
     Animator anim, anim2;
 
     [SerializeField] AudioMixer mixer;
+    
+    public AudioClip startClip;
+    AudioSource source;
 
-    const string MIXER_MUSIC = "MusicVolume";
+    public UnityEngine.UI.Button butStart;
 
     bool open;
+    GameObject sound;
+    bool playbut;
 
     private void Start()
     {
         anim = masterSlider.GetComponent<Animator>();
         anim2 = musicSlider.GetComponent<Animator>();
+        source = GetComponent<AudioSource>();
 
         if (!PlayerPrefs.HasKey("MasterVolume") || !PlayerPrefs.HasKey("MusicVolume"))
         {
@@ -40,11 +46,19 @@ public class Menu : MonoBehaviour
         {
             PlayerPrefs.DeleteAll();
         }
+        if (!source.isPlaying && playbut)
+        {
+            sound.SetActive(true);
+        }
     }
 
     public void PlayGame()
     {
-
+        butStart.interactable = false;
+        source.PlayOneShot(startClip);
+        sound = GameObject.Find("Sound");
+        sound.SetActive(false);
+        playbut = true;
     }
 
     public void TutorialAudio()
