@@ -394,7 +394,6 @@ GameObject:
   - component: {fileID: 59434282}
   - component: {fileID: 59434281}
   - component: {fileID: 59434280}
-  - component: {fileID: 59434283}
   m_Layer: 5
   m_Name: Tutorial
   m_TagString: Untagged
@@ -467,9 +466,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 59434283}
-        m_TargetAssemblyTypeName: ToTheGame, Assembly-CSharp
-        m_MethodName: toTheGame
+      - m_Target: {fileID: 1090911151}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: TutorialGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -517,18 +516,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 59434278}
   m_CullTransparentMesh: 1
---- !u!114 &59434283
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59434278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07f41dcdd5717bb42839059fcea500bd, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &90177082
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1416,7 @@ MonoBehaviour:
   musicSlider: {fileID: 744308761}
   mixer: {fileID: 24100000, guid: 428e41d84f3995745bd8bba51bcec1de, type: 2}
   startClip: {fileID: 8300000, guid: f28fd24b5ce543c458513b97d9de70b3, type: 3}
+  clickClip: {fileID: 8300000, guid: 9959ae16fa412e742b122e4eed05fc89, type: 3}
   butStart: {fileID: 1425261590}
 --- !u!114 &1090911152
 MonoBehaviour:
@@ -1549,23 +1537,59 @@ AudioSource:
     serializedVersion: 2
     m_Curve:
     - serializedVersion: 3
-      time: 0
+      time: 0.002
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
       weightedMode: 0
-      inWeight: 0.33333334
-      outWeight: 0.33333334
+      inWeight: 0
+      outWeight: 0
     - serializedVersion: 3
-      time: 1
-      value: 0
-      inSlope: 0
-      outSlope: 0
+      time: 0.16990468
+      value: 0.6685691
+      inSlope: -1.3183227
+      outSlope: -1.3183227
       tangentMode: 0
       weightedMode: 0
       inWeight: 0.33333334
-      outWeight: 0.33333334
+      outWeight: 0.8432379
+    - serializedVersion: 3
+      time: 0.37676793
+      value: 0.4648227
+      inSlope: -0.90506303
+      outSlope: -0.90506303
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 1
+    - serializedVersion: 3
+      time: 0.54176533
+      value: 0.32396996
+      inSlope: -0.77421755
+      outSlope: -0.77421755
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.3586541
+    - serializedVersion: 3
+      time: 0.6801684
+      value: 0.2301946
+      inSlope: -0.6327474
+      outSlope: -0.6327474
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.5870468
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -1.002004
+      outSlope: -1.002004
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
@@ -2461,7 +2485,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1609278324}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1090911151}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: ExitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1609278324
 MonoBehaviour:
   m_ObjectHideFlags: 0
