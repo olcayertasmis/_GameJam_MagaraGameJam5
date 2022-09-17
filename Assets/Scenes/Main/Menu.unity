@@ -1404,7 +1404,7 @@ MonoBehaviour:
   musicSlider: {fileID: 744308761}
   mixer: {fileID: 24100000, guid: 428e41d84f3995745bd8bba51bcec1de, type: 2}
   startClip: {fileID: 8300000, guid: d0a85c71cec0d7049ab22d1b8c52f843, type: 3}
-  butStart: {fileID: 0}
+  butStart: {fileID: 1425261590}
 --- !u!114 &1090911152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1684,7 +1684,7 @@ GameObject:
   - component: {fileID: 1196321027}
   - component: {fileID: 1196321026}
   m_Layer: 0
-  m_Name: Main Menu Sound Track
+  m_Name: Sound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1851,7 +1851,7 @@ GameObject:
   - component: {fileID: 1425261591}
   - component: {fileID: 1425261590}
   m_Layer: 5
-  m_Name: Start
+  m_Name: Play
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1921,7 +1921,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1425261591}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1090911151}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
+        m_MethodName: PlayGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1425261591
 MonoBehaviour:
   m_ObjectHideFlags: 0
