@@ -5,8 +5,17 @@ using UnityEngine;
 public class PistolShooting : MonoBehaviour, IUsable
 {
     [SerializeField] private int damage;
+    AudioSource source;
+    [SerializeField] private List<AudioClip> bulletSound;
 
-    public void Use(){
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
+
+    public void Use()
+    {
 
         Shoot();
 
@@ -15,10 +24,13 @@ public class PistolShooting : MonoBehaviour, IUsable
     private void Shoot()
     {
         GameObject targetRaycaster = GetComponentInParent<PlayerRaycaster>().RaycastFromCamera("Target");
-        
+
         if (targetRaycaster != null && targetRaycaster.GetComponent<Target>() != null)
         {
             targetRaycaster.GetComponent<Target>().TakeDamage(damage);
         }
+
+        int randomSound = Random.Range(0, bulletSound.Count - 1);
+        source.PlayOneShot(bulletSound[randomSound]);
     }
 }
