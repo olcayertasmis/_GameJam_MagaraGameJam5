@@ -7,6 +7,7 @@ public class PlayerUIChanger : MonoBehaviour
 {
     [SerializeField] private GameObject pickupCanvas;
     [SerializeField] private GameObject plantCanvas;
+    [SerializeField] private PlayerInventory playerInventory;
 
     public void ShowPickupInfo()
     {
@@ -17,8 +18,7 @@ public class PlayerUIChanger : MonoBehaviour
 
     public void ShowPlantInfo()
     {
-
-        plantCanvas.SetActive(true);
+        if(playerInventory.objectInHand != null && playerInventory.objectInHand.GetComponent<Bomb>() != null) plantCanvas.SetActive(true);
 
     }
 

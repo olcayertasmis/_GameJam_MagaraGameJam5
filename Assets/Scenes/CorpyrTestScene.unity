@@ -308,7 +308,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &570040390
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -887,21 +887,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayRange: 10
   startTransform: {fileID: 963194228}
-  rayEvents:
+  pickupEvent:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1862381843}
-        m_TargetAssemblyTypeName: PlayerUIChanger, Assembly-CSharp
-        m_MethodName: ShowPickupInfo
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
+  plantEvent:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1862381843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -914,7 +905,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18e63daeba9ec64babf2b9b4d46d708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 718730360}
+  pickupCanvas: {fileID: 0}
+  plantCanvas: {fileID: 0}
 --- !u!114 &1862381844
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -943,7 +935,6 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   playerInventory: {fileID: 0}
-  button: {fileID: 0}
 --- !u!1 &1956704765
 GameObject:
   m_ObjectHideFlags: 0
@@ -1182,3 +1173,60 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c16a85dff4ace3c4496e4bf495fc10fe, type: 3}
+--- !u!1001 &7358350516944364104
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4293583288391167399, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_Name
+      value: kol
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8210139259748125078, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 09b9a490df81e064d9177c09e9ff68e7, type: 3}
