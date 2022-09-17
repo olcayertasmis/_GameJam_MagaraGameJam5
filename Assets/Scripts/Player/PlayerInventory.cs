@@ -78,7 +78,7 @@ public class PlayerInventory : MonoBehaviour
             objectInHand.transform.position = placeRaycaster.gameObject.transform.position;
             objectInHand.transform.SetParent(null);
             inventory.Remove(objectInHand);
-            objectInHand = null;
+            objectInHand = inventory[0];
         }
     }
 
