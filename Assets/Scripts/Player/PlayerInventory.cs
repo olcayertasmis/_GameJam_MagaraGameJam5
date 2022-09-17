@@ -49,11 +49,10 @@ public class PlayerInventory : MonoBehaviour
     public bool PlaceObjectControl()
     {
         GameObject bombRaycaster = raycaster.RaycastFromCamera("BombArea");
-
-        if (bombRaycaster != null && bombRaycaster.gameObject.tag == "BombArea")
+        if (objectInHand != null)
         {
             var bombControl = objectInHand.GetComponentInChildren<Bomb>();
-            if (bombControl != null)
+            if (bombControl != null && bombRaycaster != null && bombRaycaster.gameObject.tag == "BombArea")
             {
                 return true;
             }
@@ -62,11 +61,16 @@ public class PlayerInventory : MonoBehaviour
                 return false;
             }
         }
-        return false;
+        else
+        {
+            return false;
+        }
     }
 
     public void PlaceObject()
     {
+        // print(PlaceObjectControl());
+        //&& PlaceObjectControl() == true
         GameObject placeRaycaster = raycaster.RaycastFromCamera("BombArea");
 
         if (placeRaycaster != null)
@@ -79,11 +83,11 @@ public class PlayerInventory : MonoBehaviour
     }
 
 
-     private void _takeObjectToHand()
-    { 
+    private void _takeObjectToHand()
+    {
 
         objectInHand.tag = "Untagged";
-        objectInHand.transform.parent = itemGrabTransform.transform; 
+        objectInHand.transform.parent = itemGrabTransform.transform;
         objectInHand.transform.position = itemGrabTransform.transform.position;
 
     }

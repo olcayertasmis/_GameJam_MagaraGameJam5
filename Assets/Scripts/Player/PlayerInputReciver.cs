@@ -28,8 +28,8 @@ public class PlayerInputReciver : MonoBehaviour
             timer -= Time.deltaTime;
             if (timer <= 0)
             {
-                inputEvent.Invoke();
-                //playerInventory.PlaceObject();
+                // inputEvent.Invoke();
+                playerInventory.PlaceObject();
                 //return;
             }
         }
