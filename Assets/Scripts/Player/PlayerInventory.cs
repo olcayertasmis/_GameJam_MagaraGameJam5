@@ -79,6 +79,8 @@ public class PlayerInventory : MonoBehaviour
             objectInHand.transform.SetParent(null);
             inventory.Remove(objectInHand);
             objectInHand = inventory[0];
+            
+            objectInHand.SetActive(true);
         }
     }
 
@@ -89,6 +91,7 @@ public class PlayerInventory : MonoBehaviour
         objectInHand.tag = "Untagged";
         objectInHand.transform.parent = itemGrabTransform.transform;
         objectInHand.transform.position = itemGrabTransform.transform.position;
+        objectInHand.transform.rotation = itemGrabTransform.transform.rotation;
 
     }
 

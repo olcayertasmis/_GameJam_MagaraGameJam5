@@ -139,7 +139,7 @@ AudioSource:
   m_GameObject: {fileID: 1163552679387359363}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 6355924050945293619, guid: 428e41d84f3995745bd8bba51bcec1de, type: 2}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 428e41d84f3995745bd8bba51bcec1de, type: 2}
   m_audioClip: {fileID: 8300000, guid: 0460823980ff1ea4fa2d8fa1234105ad, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
@@ -226,6 +226,86 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1291594081353427467
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5089577076494632854}
+  - component: {fileID: 5852658216323754173}
+  - component: {fileID: 6858348875177214003}
+  m_Layer: 5
+  m_Name: Place Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &5089577076494632854
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291594081353427467}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7799151966923581899}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 63, y: -342}
+  m_SizeDelta: {x: -860.619, y: -915.212}
+  m_Pivot: {x: 0.49999994, y: 0.5}
+--- !u!222 &5852658216323754173
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291594081353427467}
+  m_CullTransparentMesh: 1
+--- !u!114 &6858348875177214003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1291594081353427467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 73
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 89
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 1
+    m_VerticalOverflow: 1
+    m_LineSpacing: 1
+  m_Text: "Yerle\u015Ftirmek i\xE7in F tu\u015Funa bas\u0131n"
 --- !u!1 &5886336899287555515
 GameObject:
   m_ObjectHideFlags: 0
@@ -467,6 +547,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7799151966083542089}
+  - {fileID: 5089577076494632854}
   m_Father: {fileID: 8631817182575437947}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -706,12 +787,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rayRange: 10
   startTransform: {fileID: 8631817184570437250}
-  rayEvents:
+  pickupEvent:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1464618758424196596}
         m_TargetAssemblyTypeName: PlayerUIChanger, Assembly-CSharp
         m_MethodName: ShowPickupInfo
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  plantEvent:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1464618758424196596}
+        m_TargetAssemblyTypeName: PlayerUIChanger, Assembly-CSharp
+        m_MethodName: ShowPlantInfo
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -733,7 +829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b18e63daeba9ec64babf2b9b4d46d708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canvas: {fileID: 7799151966083542090}
+  pickupCanvas: {fileID: 7799151966083542090}
+  plantCanvas: {fileID: 1291594081353427467}
 --- !u!1 &8631817184570437249
 GameObject:
   m_ObjectHideFlags: 0

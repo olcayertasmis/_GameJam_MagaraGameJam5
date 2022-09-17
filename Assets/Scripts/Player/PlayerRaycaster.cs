@@ -10,8 +10,8 @@ public class PlayerRaycaster : MonoBehaviour
     public Transform startTransform;
 
     [Header("Events")]
-    [SerializeField]
-    public UnityEvent<GameObject> rayEvents;
+    [SerializeField] private UnityEvent pickupEvent;
+    [SerializeField] private UnityEvent plantEvent;
 
     void LateUpdate()
     {
@@ -25,9 +25,23 @@ public class PlayerRaycaster : MonoBehaviour
 
         RaycastHit hit;
         Debug.DrawRay(startTransform.position, startTransform.TransformDirection(Vector3.forward) * rayRange, Color.yellow);
-        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange) && hit.transform.tag == "Pickupable")
+        if (Physics.Raycast(startTransform.position, startTransform.TransformDirection(Vector3.forward), out hit, rayRange))
         {
-            rayEvents?.Invoke(hit.transform.gameObject);
+            switch (hit.transform.tag)
+            {
+                case "Pickupable":
+
+                    pickupEvent?.Invoke();
+                    break;
+
+                case "BombArea":
+
+                    plantEvent?.Invoke();
+                    break;
+
+            }
+            
+            
         }
 
     }
