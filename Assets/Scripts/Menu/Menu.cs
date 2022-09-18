@@ -89,7 +89,7 @@ public class Menu : MonoBehaviour
         source.PlayOneShot(clickClip);
         StartCoroutine(Quit());
     }
-    
+
     public void ChangeMaster(float value)
     {
         mixer.SetFloat("MasterVolume", Mathf.Log10(value) * 20);
