@@ -2117,6 +2117,10 @@ PrefabInstance:
       propertyPath: damage
       value: 20
       objectReference: {fileID: 0}
+    - target: {fileID: 992203800332603596, guid: c16a85dff4ace3c4496e4bf495fc10fe, type: 3}
+      propertyPath: muzzleFlash
+      value: 
+      objectReference: {fileID: 691724310324167568, guid: d9dc2649c105e3f4385d5b56536fd478, type: 3}
     - target: {fileID: 5764959293763488088, guid: c16a85dff4ace3c4496e4bf495fc10fe, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -2565,11 +2569,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8548043423829334951, guid: 2a10fa776dbc4e746a398b0509ccc763, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.99902034
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548043423829334951, guid: 2a10fa776dbc4e746a398b0509ccc763, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0.022968514
       objectReference: {fileID: 0}
     - target: {fileID: 8548043423829334951, guid: 2a10fa776dbc4e746a398b0509ccc763, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8548043423829334951, guid: 2a10fa776dbc4e746a398b0509ccc763, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.037827652
       objectReference: {fileID: 0}
     - target: {fileID: 8631817182575437947, guid: 2a10fa776dbc4e746a398b0509ccc763, type: 3}
       propertyPath: m_RootOrder
