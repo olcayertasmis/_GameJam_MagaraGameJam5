@@ -19,10 +19,10 @@ public class Door : MonoBehaviour
 
     private void Update()
     {
-        //if (Input.GetKeyDown(KeyCode.E))
-        //{
-        //    DoorOpen();
-        //}
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            DoorOpen();
+        }
     }
 
     private void OnTriggerEnter(Collider other)
