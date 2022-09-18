@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class DoorEventControl : MonoBehaviour
 {
@@ -16,6 +17,7 @@ public class DoorEventControl : MonoBehaviour
     [SerializeField] private List<AudioClip> roomSpeakingSound;
     [SerializeField] AudioSource audioSource;
     private bool isAdded;
+
 
     private void Start()
     {
@@ -70,6 +72,7 @@ public class DoorEventControl : MonoBehaviour
 
     void Update()
     {
+
         switch (currentRoom)
         {
             case 0:

@@ -10,6 +10,14 @@ public class PlayerInputReciver : MonoBehaviour
     [SerializeField] private PlayerInventory playerInventory;
     public Animator anim;
     bool d;
+    AudioSource source;
+    public AudioClip clip;
+    public Door door;
+
+    private void Start()
+    {
+        source = gameObject.transform.GetChild(1).GetComponent<AudioSource>();  
+    }
 
     void Update()
     {
@@ -32,17 +40,20 @@ public class PlayerInputReciver : MonoBehaviour
             {
                 anim.Play("duvaryikilma", 0, 0.0f);
                 d = true;
+                print("aloooo");
             }
             if (timer <= 0)
             {
+                door.isPlaying = true;
                 // inputEvent.Invoke();
                 playerInventory.PlaceObject();
+                source.PlayOneShot(clip);
                 //return;
             }
         }
         else if (Input.GetKeyUp(KeyCode.F))
         {
-            timer = 5f;
+            timer = 10f;
         }
     }
 }

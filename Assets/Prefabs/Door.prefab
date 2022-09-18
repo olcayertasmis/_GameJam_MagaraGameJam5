@@ -152,7 +152,9 @@ MonoBehaviour:
   anim2: {fileID: 0}
   audioOpen: {fileID: 8300000, guid: 5ef3fc5af020dd04b9e3acc726ebd8db, type: 3}
   audioClose: {fileID: 8300000, guid: ac8bfbd2f75040b4e8eefa748586af45, type: 3}
+  final: {fileID: 0}
   close: 0
+  isPlaying: 0
   doorEventControl: {fileID: 0}
 --- !u!114 &5071499902456859477
 MonoBehaviour:
