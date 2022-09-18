@@ -11,6 +11,44 @@ public class DoorEventControl : MonoBehaviour
     [SerializeField] private PlayerInventory playerInventory;
     [SerializeField] private TriggerFall triggerFall;
     [SerializeField] private Bomb bomb;
+    [SerializeField] private Target[] target;
+    [SerializeField] private List<Target> inRoomTarget;
+    private bool isAdded;
+
+    private void TargetForControl()
+    {
+        for (int i = 0; i < target.Length; i++)
+        {
+            if (target[i].roomNumber == currentRoom)
+            {
+                inRoomTarget.Add(target[i]);
+            }
+        }
+    }
+
+    private void NextRoom()
+    {
+        inRoomTarget.Clear();
+        isAdded = false;
+        currentRoom++;
+    }
+
+    private void TargetForEachControl()
+    {
+        foreach (var item in inRoomTarget)
+        {
+            isAdded = true;
+            if (item.isDead == false)
+            {
+                return;
+            }
+            else if (item.isDead == true && item == inRoomTarget[inRoomTarget.Count - 1])
+            {
+                doorEvents[currentRoom].Events[0] = true;
+                NextRoom();
+            }
+        }
+    }
 
     void Update()
     {
@@ -19,81 +57,67 @@ public class DoorEventControl : MonoBehaviour
             case 0:
                 if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
-                    doorEvents[0].Events[0] = true;
-                    // GetComponent<DoorEvent>().Events[0] = true;
+                    doorEvents[currentRoom].Events[0] = true;
                 }
 
                 GameObject eventRaycaster = raycaster.RaycastFromCamera("LookEvent");
                 if (eventRaycaster != null && eventRaycaster.gameObject.tag == "LookEvent")
                 {
-                    GetComponent<DoorEvent>().Events[1] = true;
+                    doorEvents[currentRoom].Events[1] = true;
                 }
 
-                if (doorEvents[0].Events[0] && doorEvents[0].Events[1])
+                if (doorEvents[currentRoom].Events[0] && doorEvents[currentRoom].Events[1])
                 {
-                    currentRoom++;
+                    NextRoom();
                 }
                 break;
             case 1:
                 if (playerInventory.objectInHand != null)
                 {
-                    // GetComponent<DoorEvent>().Events[0] = true;
-                    doorEvents[1].Events[0] = true;
-                    currentRoom++;
+                    doorEvents[currentRoom].Events[0] = true;
+                    NextRoom();
                 }
                 break;
             case 2:
-                if (true)
+                if (isAdded == false)
                 {
-                    //tahta hedef / hedef vurulacak
-                    // GetComponent<DoorEvent>().Events[0] = true;
-                    doorEvents[2].Events[0] = true;
-                    currentRoom++;
+                    TargetForControl();
                 }
+                TargetForEachControl();
                 break;
             case 3:
-                if (true)
+                if (isAdded == false)
                 {
-                    //insan odası / insan vurulacak
-                    // GetComponent<DoorEvent>().Events[0] = true;
-                    doorEvents[3].Events[0] = true;
-                    currentRoom++;
+                    TargetForControl();
                 }
+                TargetForEachControl();
                 break;
             case 4:
                 if (triggerFall.isFall)
                 {
-                    //bir çanın olduğu oda / insanların olduğu yere cisim düşüreceğiz
-                    // GetComponent<DoorEvent>().Events[0] = true;
-                    doorEvents[4].Events[0] = true;
-                    currentRoom++;
+                    doorEvents[currentRoom].Events[0] = true;
+                    NextRoom();
                 }
                 break;
             case 5:
                 if (playerInventory.objectInHand.GetComponent<Bomb>())
                 {
-                    //bomba odasına / masadan bombayı alıcaaz
-                    // GetComponent<DoorEvent>().Events[0] = true;
-                    doorEvents[5].Events[0] = true;
-                    currentRoom++;
+                    doorEvents[currentRoom].Events[0] = true;
+                    NextRoom();
                 }
                 break;
             case 6:
                 if (playerInventory.isPlaced)
                 {
-                    // insanların saklı olduğu oda / bombayı kurup sonraki odaya geçeceğiz
-                    // GetComponent<DoorEvent>().Events[0] = true;
-                    doorEvents[6].Events[0] = true;
-                    currentRoom++;
+                    doorEvents[currentRoom].Events[0] = true;
+                    NextRoom();
                 }
                 break;
             case 7:
                 if (bomb.isExplode)
                 {
-                    // korumalı oda / bomba patlayacak
-                    // GetComponent<DoorEvent>().Events[0] = true;
-                    doorEvents[7].Events[0] = true;
-                    currentRoom++;
+                    doorEvents[currentRoom].Events[0] = true;
+                    NextRoom();
                 }
                 break;
         }

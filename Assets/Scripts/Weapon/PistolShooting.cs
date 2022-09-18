@@ -27,7 +27,7 @@ public class PistolShooting : MonoBehaviour, IUsable
 
         if (targetRaycaster != null && targetRaycaster.GetComponent<Target>() != null)
         {
-            targetRaycaster.GetComponent<Target>().TakeDamage(damage);
+            targetRaycaster.GetComponentInParent<Target>().TakeDamage(damage);
         }
 
         int randomSound = Random.Range(0, bulletSound.Count - 1);

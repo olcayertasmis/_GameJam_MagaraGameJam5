@@ -6,14 +6,14 @@ using UnityEngine.Events;
 
 public class Button : MonoBehaviour
 {
-    [SerializeField] public UnityEvent inputEvent;
     public PlayerRaycaster raycaster;
+    [SerializeField] private TriggerFall triggerFall;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && inputEvent != null)
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            inputEvent.Invoke();
+            PushButton();
         }
     }
 
@@ -23,7 +23,8 @@ public class Button : MonoBehaviour
 
         if (tempObject != null && tempObject.tag == "Button")
         {
-            print("Butonum"); // Buraya istenen fonksiyonları çağırma yazılacak
+            print("girdim");
+            triggerFall.UnfreezeRigidbody();
         }
     }
 }

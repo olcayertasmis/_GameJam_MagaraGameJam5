@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class TriggerFall : MonoBehaviour
 {
-    public bool isFall = false; //Event sistemi için yazdım- Olcay
+    public bool isFall = false;
 
     private void Start()
     {
@@ -14,8 +14,7 @@ public class TriggerFall : MonoBehaviour
 
     }
     public void UnfreezeRigidbody()
-    { //butona basildiginda bu metod calisacak / Corpyr
-
+    {
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
         isFall = true;
     }
