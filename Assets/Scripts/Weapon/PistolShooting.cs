@@ -29,10 +29,10 @@ public class PistolShooting : MonoBehaviour, IUsable
         {
             targetRaycaster.GetComponentInParent<Target>().TakeDamage(damage);
         }
-
+        print("1");
         int randomSound = Random.Range(0, bulletSound.Count - 1);
         source.PlayOneShot(bulletSound[randomSound]);
-
+        
         muzzleFlash.SetActive(true);
         StartCoroutine(WaitParticle());
     }
