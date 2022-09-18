@@ -8090,7 +8090,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1374161374
 Transform:
   m_ObjectHideFlags: 0
@@ -11551,6 +11551,13 @@ MonoBehaviour:
   - {fileID: 317926951}
   - {fileID: 35939167}
   inRoomTarget: []
+  roomSpeakingSound:
+  - {fileID: 8300000, guid: 2257c5ee47e9ad44293de3330d208275, type: 3}
+  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
+  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
+  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
+  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
+  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
 --- !u!4 &2033540127
 Transform:
   m_ObjectHideFlags: 0
@@ -12608,6 +12615,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1279796719}
     m_Modifications:
     - target: {fileID: 3937841782269869738, guid: b0a7a3b481fa3884f810740339186e4c, type: 3}
+      propertyPath: isMan
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3937841782269869738, guid: b0a7a3b481fa3884f810740339186e4c, type: 3}
       propertyPath: roomNumber
       value: 3
       objectReference: {fileID: 0}
@@ -12679,6 +12690,10 @@ PrefabInstance:
     - target: {fileID: 3584629640279009517, guid: 490a67dd971a1cd4e97715562d1ba2c5, type: 3}
       propertyPath: m_TagString
       value: Target
+      objectReference: {fileID: 0}
+    - target: {fileID: 3829370746720724981, guid: 490a67dd971a1cd4e97715562d1ba2c5, type: 3}
+      propertyPath: isMan
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3829370746720724981, guid: 490a67dd971a1cd4e97715562d1ba2c5, type: 3}
       propertyPath: roomNumber

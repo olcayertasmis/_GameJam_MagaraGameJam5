@@ -414,6 +414,10 @@ MonoBehaviour:
   health: 10
   roomNumber: 0
   isDead: 0
+  painSound:
+  - {fileID: 8300000, guid: cc6a569e30673fc49afcda10655cc7f6, type: 3}
+  - {fileID: 8300000, guid: 4eff8dea3d2371146a200af69dbf4988, type: 3}
+  isMan: 1
 --- !u!1 &3636426652827602711
 GameObject:
   m_ObjectHideFlags: 0

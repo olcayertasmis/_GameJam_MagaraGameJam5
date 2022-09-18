@@ -13,8 +13,10 @@ public class DoorEventControl : MonoBehaviour
     [SerializeField] private Bomb bomb;
     [SerializeField] private Target[] target;
     [SerializeField] private List<Target> inRoomTarget;
+    [SerializeField] private List<AudioClip> roomSpeakingSound;
+    AudioSource audioSource;
     private bool isAdded;
-//
+
     private void TargetForControl()
     {
         for (int i = 0; i < target.Length; i++)
@@ -50,11 +52,17 @@ public class DoorEventControl : MonoBehaviour
         }
     }
 
+    private void PlaySound()
+    {
+        audioSource.PlayOneShot(roomSpeakingSound[currentRoom]);
+    }
+
     void Update()
     {
         switch (currentRoom)
         {
             case 0:
+                PlaySound();
                 if (Input.GetKeyDown(KeyCode.W) || Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.S) || Input.GetKeyDown(KeyCode.D))
                 {
                     doorEvents[currentRoom].Events[0] = true;
@@ -72,6 +80,7 @@ public class DoorEventControl : MonoBehaviour
                 }
                 break;
             case 1:
+                PlaySound();
                 if (playerInventory.objectInHand != null)
                 {
                     doorEvents[currentRoom].Events[0] = true;
@@ -79,6 +88,7 @@ public class DoorEventControl : MonoBehaviour
                 }
                 break;
             case 2:
+                PlaySound();
                 if (isAdded == false)
                 {
                     TargetForControl();
@@ -86,6 +96,7 @@ public class DoorEventControl : MonoBehaviour
                 TargetForEachControl();
                 break;
             case 3:
+                PlaySound();
                 if (isAdded == false)
                 {
                     TargetForControl();
@@ -93,6 +104,7 @@ public class DoorEventControl : MonoBehaviour
                 TargetForEachControl();
                 break;
             case 4:
+                PlaySound();
                 if (triggerFall.isFall)
                 {
                     doorEvents[currentRoom].Events[0] = true;
@@ -100,6 +112,7 @@ public class DoorEventControl : MonoBehaviour
                 }
                 break;
             case 5:
+                PlaySound();
                 if (playerInventory.objectInHand.GetComponent<Bomb>())
                 {
                     doorEvents[currentRoom].Events[0] = true;
@@ -107,6 +120,7 @@ public class DoorEventControl : MonoBehaviour
                 }
                 break;
             case 6:
+                PlaySound();
                 if (playerInventory.isPlaced)
                 {
                     doorEvents[currentRoom].Events[0] = true;
@@ -114,6 +128,7 @@ public class DoorEventControl : MonoBehaviour
                 }
                 break;
             case 7:
+                PlaySound();
                 if (bomb.isExplode)
                 {
                     doorEvents[currentRoom].Events[0] = true;
