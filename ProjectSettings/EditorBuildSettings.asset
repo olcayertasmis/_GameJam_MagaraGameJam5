@@ -6,6 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Arda.unity
-    guid: 5ba0a83bb3d75d3459a8a85f62d11914
+    path: Assets/Scenes/Talha.unity
+    guid: c4c1eb922fd67554b8cfc88b15555285
   m_configObjects: {}
