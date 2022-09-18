@@ -14,29 +14,6 @@ public class PlayerInventory : MonoBehaviour
     public PlayerRaycaster raycaster;
     public bool isPlaced;
 
-    [SerializeField] private DoorEventControl doorEventControl;
-
-    private void Start()
-    {
-        //doorEventControl.SayiChanged += doorEventControl_SayiChanged;
-    }
-
-    private void doorEventControl_SayiChanged(int a, string b)
-    {
-        if (b == "-")
-        {
-            print("Sayi azaltildi. " + a);
-        }
-        else
-        {
-            print("Sayi yukseltildi. " + a);
-        }
-    }
-
-    private void Update()
-    {
-
-    }
     public void UseObjectInHand()
     {
 
