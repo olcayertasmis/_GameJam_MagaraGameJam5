@@ -10,6 +10,8 @@ public class Door : MonoBehaviour
     bool open;
     public bool close;
 
+    [SerializeField] private DoorEventControl doorEventControl;
+
     private void Start()
     {
         anim = gameObject.transform.GetChild(0).GetComponent<Animator>();
@@ -33,6 +35,7 @@ public class Door : MonoBehaviour
             {
                 DoorOpen();
                 close = true;
+                // doorEventControl.PlaySound();
             }
         }
     }
