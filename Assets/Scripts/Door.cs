@@ -35,7 +35,7 @@ public class Door : MonoBehaviour
             {
                 DoorOpen();
                 close = true;
-                // doorEventControl.PlaySound();
+                doorEventControl.PlaySound();
             }
         }
     }

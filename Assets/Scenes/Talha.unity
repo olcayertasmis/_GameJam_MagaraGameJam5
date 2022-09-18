@@ -13530,9 +13530,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 63162052a60a1274aac109e82300fa59, type: 3}
   - {fileID: 8300000, guid: 2266e951e41240144806ddec22407dd2, type: 3}
   - {fileID: 8300000, guid: 79daa986218b9444a8ac00e3ba6f8e7d, type: 3}
-  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
-  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
-  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
   audioSource: {fileID: 2033540128}
 --- !u!4 &2033540127
 Transform:
