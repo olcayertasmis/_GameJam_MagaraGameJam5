@@ -78,6 +78,8 @@ public class PlayerInventory : MonoBehaviour
         if (placeRaycaster != null)
         {
             objectInHand.transform.position = placeRaycaster.gameObject.transform.position;
+            objectInHand.transform.rotation = placeRaycaster.gameObject.transform.rotation;
+            Destroy(placeRaycaster.gameObject);
             objectInHand.transform.SetParent(null);
             inventory.Remove(objectInHand);
             objectInHand = inventory[0];

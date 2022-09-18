@@ -6,13 +6,14 @@ using UnityEngine.Events;
 public class PlayerInputReciver : MonoBehaviour
 {
     [SerializeField] public UnityEvent inputEvent;
-    private float timer = 10f;
+    private float timer = 7f;
     [SerializeField] private PlayerInventory playerInventory;
     public Animator anim;
     bool d;
     AudioSource source;
-    public AudioClip clip;
+    public AudioClip clip, clip2;
     public Door door;
+    public GameObject bombloop;
 
     private void Start()
     {
@@ -40,7 +41,7 @@ public class PlayerInputReciver : MonoBehaviour
             {
                 anim.Play("duvaryikilma", 0, 0.0f);
                 d = true;
-                print("aloooo");
+                source.PlayOneShot(clip2);
             }
             if (timer <= 0)
             {
@@ -48,12 +49,13 @@ public class PlayerInputReciver : MonoBehaviour
                 // inputEvent.Invoke();
                 playerInventory.PlaceObject();
                 source.PlayOneShot(clip);
+                bombloop.SetActive(true);
                 //return;
             }
         }
         else if (Input.GetKeyUp(KeyCode.F))
         {
-            timer = 10f;
+            timer = 7f;
         }
     }
 }

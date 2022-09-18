@@ -13,6 +13,8 @@ public class Door : MonoBehaviour
 
     public bool isPlaying = false;
 
+    public GameObject bombloop;
+
     float time = 2f;
     bool s;
 
@@ -31,6 +33,21 @@ public class Door : MonoBehaviour
         //{
         //    DoorOpen();
         //}
+        if (isPlaying)
+        {
+            time -= Time.deltaTime;
+        }
+        if (!s && time <= 0)
+        {
+            source.PlayOneShot(final);
+            time = 10.1f;
+            s = true;
+
+        }
+        if (s && time <= 0)
+        {
+            SceneManager.LoadScene("menu");
+        }
     }
 
     private void OnTriggerEnter(Collider other)
@@ -42,27 +59,18 @@ public class Door : MonoBehaviour
                 DoorOpen();
                 close = true;
                 doorEventControl.PlaySound();
+                if (isPlaying)
+                {
+                    bombloop.SetActive(false);
+                }
             }
         }
     }
-
+    
     public void DoorOpen()
     {
 
-        if (isPlaying)
-        {
-            time -= Time.deltaTime;
-        }
-        if (isPlaying && time <= 0)
-        {
-            time = 10.1f;
-            s = true;
-            source.PlayOneShot(final);
-        }
-        if (isPlaying && time <= 0)
-        {
-            SceneManager.LoadScene("final");
-        }
+
         open = !open;
         if (open)
         {
