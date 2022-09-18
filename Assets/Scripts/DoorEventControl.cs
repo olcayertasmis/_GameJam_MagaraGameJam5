@@ -61,14 +61,9 @@ public class DoorEventControl : MonoBehaviour
 
     public void PlaySound()
     {
-        if (roomSpeakingSound[currentRoom] != null)
+        if (roomSpeakingSound.Count > currentRoom)
             audioSource.PlayOneShot(roomSpeakingSound[currentRoom]);
     }
-
-    // private void OnTriggerEnter(Collider other)
-    // {
-    //     PlaySound();
-    // }
 
     void Update()
     {
