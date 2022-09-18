@@ -4,13 +4,17 @@ using UnityEngine;
 
 public class Bomb : MonoBehaviour
 {
-    void Start()
-    {
-        
-    }
-
+    public bool isExplode;
     void Update()
     {
-        
+
     }
+
+    private void Explosion()
+    {
+        //particle kodları vs
+
+        isExplode = true;
+    }
+
 }

@@ -17,6 +17,6 @@ public class TriggerFall : MonoBehaviour
     { //butona basildiginda bu metod calisacak / Corpyr
 
         GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-
+        isFall = true;
     }
 }

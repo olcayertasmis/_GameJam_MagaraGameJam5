@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,6 +12,26 @@ public class PlayerInventory : MonoBehaviour
     [Space(10f)]
     public Transform itemGrabTransform; //Gecici el / Corpyr
     public PlayerRaycaster raycaster;
+    public bool isPlaced;
+
+    [SerializeField] private DoorEventControl doorEventControl;
+
+    private void Start()
+    {
+        doorEventControl.SayiChanged += doorEventControl_SayiChanged;
+    }
+
+    private void doorEventControl_SayiChanged(int a, string b)
+    {
+        if (b == "-")
+        {
+            print("Sayi azaltildi. " + a);
+        }
+        else
+        {
+            print("Sayi yukseltildi. " + a);
+        }
+    }
 
     private void Update()
     {
@@ -79,8 +100,10 @@ public class PlayerInventory : MonoBehaviour
             objectInHand.transform.SetParent(null);
             inventory.Remove(objectInHand);
             objectInHand = inventory[0];
-            
+
             objectInHand.SetActive(true);
+
+            isPlaced = true;
         }
     }
 
