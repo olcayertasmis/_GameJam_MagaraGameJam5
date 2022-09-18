@@ -1003,6 +1003,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7176765615672757044}
+  - component: {fileID: 3954708199679240748}
+  - component: {fileID: 3937841782269869738}
   m_Layer: 0
   m_Name: adam_dizcoken
   m_TagString: Untagged
@@ -1028,6 +1030,34 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 53.486, z: 0}
+--- !u!65 &3954708199679240748
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553432544953880974}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.4349777, y: 1.1266608, z: 0.34212887}
+  m_Center: {x: 0.027778754, y: 0.5830689, z: 0.017251952}
+--- !u!114 &3937841782269869738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7553432544953880974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 546822f83e8141144a2a57d6a6bee0f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 10
+  roomNumber: 0
+  isDead: 0
 --- !u!1 &7576074066964414934
 GameObject:
   m_ObjectHideFlags: 0
