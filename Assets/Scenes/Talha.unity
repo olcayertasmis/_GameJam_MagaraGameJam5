@@ -3697,10 +3697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door1
       objectReference: {fileID: 0}
-    - target: {fileID: 5071499902456859477, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
-      propertyPath: Events.Array.size
-      value: 2
-      objectReference: {fileID: 0}
+    - target: {fileID: 4533449615458032325, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: doorEventControl
+      value: 
+      objectReference: {fileID: 2033540126}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
 --- !u!114 &449536573 stripped
@@ -4471,6 +4471,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door3
       objectReference: {fileID: 0}
+    - target: {fileID: 4533449615458032325, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: doorEventControl
+      value: 
+      objectReference: {fileID: 2033540126}
+    - target: {fileID: 5071499902456859477, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: Events.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
 --- !u!114 &590008298 stripped
@@ -4543,6 +4551,14 @@ PrefabInstance:
     - target: {fileID: 4533449615458032322, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
       propertyPath: m_Name
       value: Door5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533449615458032325, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: doorEventControl
+      value: 
+      objectReference: {fileID: 2033540126}
+    - target: {fileID: 5071499902456859477, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: Events.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
@@ -4761,6 +4777,14 @@ PrefabInstance:
     - target: {fileID: 4533449615458032322, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
       propertyPath: m_Name
       value: Door7
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533449615458032325, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: doorEventControl
+      value: 
+      objectReference: {fileID: 2033540126}
+    - target: {fileID: 5071499902456859477, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: Events.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
@@ -9401,7 +9425,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1374161374
 Transform:
   m_ObjectHideFlags: 0
@@ -11652,6 +11676,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Door2
       objectReference: {fileID: 0}
+    - target: {fileID: 4533449615458032325, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: doorEventControl
+      value: 
+      objectReference: {fileID: 2033540126}
+    - target: {fileID: 5071499902456859477, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: Events.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
 --- !u!114 &1799142654 stripped
@@ -13495,12 +13527,9 @@ MonoBehaviour:
   - {fileID: 35939167}
   inRoomTarget: []
   roomSpeakingSound:
-  - {fileID: 8300000, guid: 2257c5ee47e9ad44293de3330d208275, type: 3}
-  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
-  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
-  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
-  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
-  - {fileID: 8300000, guid: 8467959760d3cf34a860a41b9e4a2200, type: 3}
+  - {fileID: 8300000, guid: 63162052a60a1274aac109e82300fa59, type: 3}
+  - {fileID: 8300000, guid: 2266e951e41240144806ddec22407dd2, type: 3}
+  - {fileID: 8300000, guid: 79daa986218b9444a8ac00e3ba6f8e7d, type: 3}
   audioSource: {fileID: 2033540128}
 --- !u!4 &2033540127
 Transform:
@@ -14053,6 +14082,14 @@ PrefabInstance:
     - target: {fileID: 4533449615458032322, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
       propertyPath: m_Name
       value: Door4
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533449615458032325, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: doorEventControl
+      value: 
+      objectReference: {fileID: 2033540126}
+    - target: {fileID: 5071499902456859477, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: Events.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
@@ -14738,6 +14775,14 @@ PrefabInstance:
     - target: {fileID: 4533449615458032322, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
       propertyPath: m_Name
       value: Door6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4533449615458032325, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: doorEventControl
+      value: 
+      objectReference: {fileID: 2033540126}
+    - target: {fileID: 5071499902456859477, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}
+      propertyPath: Events.Array.size
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 31650b4034988654fbcbfe3477b2eefd, type: 3}

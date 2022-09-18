@@ -7,7 +7,7 @@ public class Target : MonoBehaviour
     [SerializeField] private int health;
     public int roomNumber;
     public bool isDead;
-    AudioSource source;
+    [SerializeField] private AudioSource source;
     [SerializeField] private List<AudioClip> painSound;
     [SerializeField] private bool isMan;
 

@@ -153,6 +153,7 @@ MonoBehaviour:
   audioOpen: {fileID: 8300000, guid: 5ef3fc5af020dd04b9e3acc726ebd8db, type: 3}
   audioClose: {fileID: 8300000, guid: ac8bfbd2f75040b4e8eefa748586af45, type: 3}
   close: 0
+  doorEventControl: {fileID: 0}
 --- !u!114 &5071499902456859477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -165,7 +166,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8b956df0e5addeb41902e0352fc6c8a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Events: 00
+  Events: 0000
   door: {fileID: 4533449615458032325}
   finish: 0
 --- !u!65 &4533449615458032324
