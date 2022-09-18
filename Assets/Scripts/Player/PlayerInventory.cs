@@ -14,6 +14,10 @@ public class PlayerInventory : MonoBehaviour
     public PlayerRaycaster raycaster;
     public bool isPlaced;
 
+    [Space(10f)]
+    [SerializeField] private GameObject emptyHand;
+    [SerializeField] private GameObject holdHand;
+
     public void UseObjectInHand()
     {
 
@@ -87,7 +91,13 @@ public class PlayerInventory : MonoBehaviour
 
     private void _takeObjectToHand()
     {
+        if(emptyHand.activeSelf == true){
+            
+            emptyHand.SetActive(false);
+            holdHand.SetActive(true);
 
+        }
+        
         objectInHand.tag = "Untagged";
         objectInHand.transform.parent = itemGrabTransform.transform;
         objectInHand.transform.position = itemGrabTransform.transform.position;
