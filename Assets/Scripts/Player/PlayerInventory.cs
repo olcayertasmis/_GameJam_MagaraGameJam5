@@ -18,7 +18,7 @@ public class PlayerInventory : MonoBehaviour
 
     private void Start()
     {
-        doorEventControl.SayiChanged += doorEventControl_SayiChanged;
+        //doorEventControl.SayiChanged += doorEventControl_SayiChanged;
     }
 
     private void doorEventControl_SayiChanged(int a, string b)
