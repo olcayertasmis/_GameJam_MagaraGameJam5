@@ -14,7 +14,7 @@ public class DoorEventControl : MonoBehaviour
     [SerializeField] private Target[] target;
     [SerializeField] private List<Target> inRoomTarget;
     [SerializeField] private List<AudioClip> roomSpeakingSound;
-    AudioSource audioSource;
+    [SerializeField] AudioSource audioSource;
     private bool isAdded;
 
     private void TargetForControl()

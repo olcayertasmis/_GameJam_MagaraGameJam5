@@ -20,7 +20,10 @@ public class Target : MonoBehaviour
         }
         if (health <= 0)
         {
-            PlaySound();
+            if (painSound.Count != 0)
+            {
+                PlaySound();
+            }
             Die();
         }
     }
