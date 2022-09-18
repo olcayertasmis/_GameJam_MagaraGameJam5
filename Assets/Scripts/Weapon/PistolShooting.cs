@@ -7,8 +7,8 @@ public class PistolShooting : MonoBehaviour, IUsable
     [SerializeField] private int damage;
     AudioSource source;
     [SerializeField] private List<AudioClip> bulletSound;
-
-
+    [SerializeField] private GameObject muzzleFlash;
+    
     private void Start()
     {
         source = GetComponent<AudioSource>();
@@ -27,10 +27,18 @@ public class PistolShooting : MonoBehaviour, IUsable
 
         if (targetRaycaster != null && targetRaycaster.GetComponent<Target>() != null)
         {
-            targetRaycaster.GetComponent<Target>().TakeDamage(damage);
+            targetRaycaster.GetComponentInParent<Target>().TakeDamage(damage);
         }
 
         int randomSound = Random.Range(0, bulletSound.Count - 1);
         source.PlayOneShot(bulletSound[randomSound]);
+
+        muzzleFlash.SetActive(true);
+        StartCoroutine(WaitParticle());
+    }
+    IEnumerator WaitParticle()
+    {
+        yield return new WaitForSeconds(0.05f);
+        muzzleFlash.SetActive(false);
     }
 }

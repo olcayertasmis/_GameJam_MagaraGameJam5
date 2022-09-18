@@ -7,7 +7,6 @@ public class DoorEvent : MonoBehaviour
     public bool[] Events;
     public Door door;
     public bool finish;
-    [SerializeField] private DoorEventControl doorEventControl;
 
     void Update()
     {

@@ -5,7 +5,12 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     [SerializeField] private int health;
-    [SerializeField] private int roomNumber;
+    public int roomNumber;
+    public bool isDead;
+    AudioSource source;
+    [SerializeField] private List<AudioClip> painSound;
+    [SerializeField] private bool isMan;
+
 
     public void TakeDamage(int damage)
     {
@@ -13,14 +18,27 @@ public class Target : MonoBehaviour
         {
             health -= damage;
         }
-        else if (health <= 0)
+        if (health <= 0)
         {
+            PlaySound();
             Die();
         }
     }
 
+    private void PlaySound()
+    {
+        if (isMan)
+        {
+            source.PlayOneShot(painSound[0]);
+        }
+        if (!isMan)
+        {
+            source.PlayOneShot(painSound[1]);
+        }
+    }
     private void Die()
     {
+        isDead = true;
         // Animation
     }
 
