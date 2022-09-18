@@ -1019,6 +1019,8 @@ MonoBehaviour:
   inventory: []
   itemGrabTransform: {fileID: 8548043423829334951}
   raycaster: {fileID: 6635744492301484367}
+  isPlaced: 0
+  doorEventControl: {fileID: 0}
 --- !u!114 &6635744492301484367
 MonoBehaviour:
   m_ObjectHideFlags: 0
