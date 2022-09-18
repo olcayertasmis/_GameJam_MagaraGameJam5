@@ -14,7 +14,7 @@ public class DoorEventControl : MonoBehaviour
     [SerializeField] private Target[] target;
     [SerializeField] private List<Target> inRoomTarget;
     private bool isAdded;
-
+//
     private void TargetForControl()
     {
         for (int i = 0; i < target.Length; i++)
