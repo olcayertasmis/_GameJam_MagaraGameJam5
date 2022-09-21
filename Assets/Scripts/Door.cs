@@ -46,6 +46,9 @@ public class Door : MonoBehaviour
         }
         if (s && time <= 0)
         {
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+            PlayerPrefs.SetInt("s", 1);
             SceneManager.LoadScene("menu");
         }
     }
