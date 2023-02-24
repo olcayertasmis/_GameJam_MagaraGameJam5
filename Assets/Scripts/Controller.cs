@@ -36,16 +36,7 @@ public class Controller : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            canMove = !canMove;
-            Cursor.visible = !canMove;
-            if (canMove)
-            {
-                Cursor.lockState = CursorLockMode.Locked;
-            }
-            else
-            {
-                Cursor.lockState = CursorLockMode.None;
-            }
+            Application.Quit();
         }
 
         Vector3 forward = transform.TransformDirection(Vector3.forward);
@@ -96,5 +87,9 @@ public class Controller : MonoBehaviour
             footsteps.Pause();
 
         }
+    }
+    private void OnApplicationQuit()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }

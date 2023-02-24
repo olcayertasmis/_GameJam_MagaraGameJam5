@@ -14,7 +14,7 @@ public class Menu : MonoBehaviour
 
     [SerializeField] AudioMixer mixer;
     
-    public AudioClip startClip, clickClip;
+    public AudioClip startClip, clickClip, finalClip;
     AudioSource source;
 
     public UnityEngine.UI.Button butStart;
@@ -56,8 +56,17 @@ public class Menu : MonoBehaviour
 
     public void PlayGame()
     {
+
         butStart.interactable = false;
-        source.PlayOneShot(startClip);
+        if (PlayerPrefs.HasKey("s"))
+        {
+            source.PlayOneShot(finalClip);
+        }
+        else
+        {
+            source.PlayOneShot(startClip);
+        }
+        
         source.PlayOneShot(clickClip);
         sound = GameObject.Find("Sound");
         sound.SetActive(false);
@@ -115,6 +124,8 @@ public class Menu : MonoBehaviour
     IEnumerator Quit()
     {
         yield return new WaitForSeconds(1);
+        PlayerPrefs.DeleteAll();
         Application.Quit();
+        
     }
 }

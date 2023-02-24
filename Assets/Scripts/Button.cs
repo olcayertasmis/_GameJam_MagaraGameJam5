@@ -8,6 +8,17 @@ public class Button : MonoBehaviour
 {
     public PlayerRaycaster raycaster;
     [SerializeField] private TriggerFall triggerFall;
+    bool b = false,s = false;
+    float time = 0.9f;
+
+    AudioSource source;
+
+    public AudioClip clip, clip1;
+
+    private void Start()
+    {
+        source = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -15,16 +26,26 @@ public class Button : MonoBehaviour
         {
             PushButton();
         }
+        if (b)
+        {
+            time -= Time.deltaTime;
+        }
+        if (!s && time <= 0)
+        {
+            source.PlayOneShot(clip1);
+            s = true;
+        }
     }
 
     public void PushButton()
     {
         GameObject tempObject = raycaster.RaycastFromCamera("Button");
 
-        if (tempObject != null && tempObject.tag == "Button")
+        if (tempObject != null && tempObject.tag == "Button" && !b)
         {
-            print("girdim");
             triggerFall.UnfreezeRigidbody();
+            source.PlayOneShot(clip);
+            b = true;
         }
     }
 }

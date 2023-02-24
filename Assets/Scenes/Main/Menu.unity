@@ -1417,6 +1417,7 @@ MonoBehaviour:
   mixer: {fileID: 24100000, guid: 428e41d84f3995745bd8bba51bcec1de, type: 2}
   startClip: {fileID: 8300000, guid: f28fd24b5ce543c458513b97d9de70b3, type: 3}
   clickClip: {fileID: 8300000, guid: 9959ae16fa412e742b122e4eed05fc89, type: 3}
+  finalClip: {fileID: 8300000, guid: ae71ffdace03cb347946519b77ed2f75, type: 3}
   butStart: {fileID: 1425261590}
 --- !u!114 &1090911152
 MonoBehaviour:
@@ -1967,7 +1968,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1425261591}
+  m_TargetGraphic: {fileID: 1596814889}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
